@@ -1,17 +1,18 @@
 version: "3"
 
 services:
-  app:
-    image: ngnix:latest
+  matter:
+    container_name: mattermost-preview
+    image: mattermost/mattermost-preview
     ports:
-      - 800:80
+      - 8065:8065
     networks:
       - dummy-net
+    environment:
+      - USERNAME={{ secrets.auth_usr }}
+      - PASSWORD={{ secrets.auth_pwd }}
     volumes:
       - /home/linodeuser/www/:/usr/share/nginx/html
 
 networks:
   dummy-net:
-
-volumes:
-  portainer:
