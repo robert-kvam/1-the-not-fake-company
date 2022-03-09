@@ -1,7 +1,7 @@
 ## Plan phase
 
 ```mermaid
-journey;
+journey
     title My working day
     section Go to work
       Make tea: 5: Me
